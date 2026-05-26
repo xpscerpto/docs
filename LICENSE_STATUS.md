@@ -291,17 +291,6 @@ SUPPORT.md
 
 ## 15. Recommended README wording
 
-Until a formal license is selected, the repository README should not say:
-
-```text
-See LICENSE.
-```
-
-Instead, it should say:
-
-```text
-See LICENSE_STATUS.md.
-
 XPScerpto is currently published for review, evaluation, and project visibility only. No permission is granted to use, copy, modify, redistribute, sublicense, or commercially deploy the code unless a formal license is later published or written permission is granted by the project owner.
 ```
 
