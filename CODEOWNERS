@@ -1,0 +1,264 @@
+# XPScerpto CODEOWNERS
+#
+# Status: review-routing policy
+# Scope: repository-wide ownership routing for governance, security, architecture,
+#        authority, platform, hardware, SIMD, cryptography, FHE, CI, tests, tools,
+#        documentation, release evidence, and protected public surfaces.
+#
+# IMPORTANT:
+# Replace the placeholder teams below with the repository's real GitHub
+# organization/team names before enabling branch protection.
+#
+# CODEOWNERS defines who must review a change.
+# It does not define how review is performed.
+#
+# Review discipline is defined in:
+#
+# - REVIEW_POLICY.md
+# - GOVERNANCE.md
+# - CI_VALIDATION_GATES.md
+# - SECURITY.md
+# - MODULE_BOUNDARIES.md
+#
+# Ordering rule:
+# GitHub applies the last matching CODEOWNERS pattern.
+# Therefore, broad ownership rules appear first, and more specific protected
+# surfaces appear later.
+
+# ---------------------------------------------------------------------------
+# Default ownership
+# ---------------------------------------------------------------------------
+
+* @xpscerpto/sovereign-maintainers
+
+
+# ---------------------------------------------------------------------------
+# Root governance, policy, and project-entry documents
+# ---------------------------------------------------------------------------
+
+/START_HERE.md                    @xpscerpto/governance-maintainers @xpscerpto/sovereign-maintainers
+/GOVERNANCE.md                    @xpscerpto/governance-maintainers @xpscerpto/security-maintainers @xpscerpto/sovereign-maintainers
+/ENGINEERING_PRINCIPLES.md        @xpscerpto/governance-maintainers @xpscerpto/architecture-maintainers @xpscerpto/sovereign-maintainers
+/AUTHORITY_MODEL.md               @xpscerpto/security-maintainers @xpscerpto/architecture-maintainers @xpscerpto/platform-maintainers @xpscerpto/sovereign-maintainers
+/ARCHITECTURE.md                  @xpscerpto/architecture-maintainers @xpscerpto/security-maintainers @xpscerpto/sovereign-maintainers
+/MODULE_BOUNDARIES.md             @xpscerpto/architecture-maintainers @xpscerpto/security-maintainers @xpscerpto/validation-maintainers @xpscerpto/sovereign-maintainers
+/THREAT_MODEL.md                  @xpscerpto/security-maintainers @xpscerpto/architecture-maintainers @xpscerpto/sovereign-maintainers
+/SECURITY.md                      @xpscerpto/security-maintainers @xpscerpto/governance-maintainers @xpscerpto/sovereign-maintainers
+/CI_VALIDATION_GATES.md           @xpscerpto/ci-maintainers @xpscerpto/validation-maintainers @xpscerpto/security-maintainers @xpscerpto/sovereign-maintainers
+/REVIEW_POLICY.md                 @xpscerpto/governance-maintainers @xpscerpto/security-maintainers @xpscerpto/sovereign-maintainers
+/CONTRIBUTING.md                  @xpscerpto/governance-maintainers @xpscerpto/validation-maintainers @xpscerpto/sovereign-maintainers
+/CODEOWNERS                       @xpscerpto/governance-maintainers @xpscerpto/security-maintainers @xpscerpto/sovereign-maintainers
+
+
+# ---------------------------------------------------------------------------
+# GitHub, CI, automation, and repository-control surfaces
+# ---------------------------------------------------------------------------
+
+/.github/                         @xpscerpto/ci-maintainers @xpscerpto/governance-maintainers @xpscerpto/security-maintainers @xpscerpto/sovereign-maintainers
+/.github/CODEOWNERS               @xpscerpto/governance-maintainers @xpscerpto/security-maintainers @xpscerpto/sovereign-maintainers
+/.github/workflows/               @xpscerpto/ci-maintainers @xpscerpto/validation-maintainers @xpscerpto/security-maintainers @xpscerpto/sovereign-maintainers
+/.github/ISSUE_TEMPLATE/          @xpscerpto/governance-maintainers @xpscerpto/security-maintainers
+/.github/PULL_REQUEST_TEMPLATE*   @xpscerpto/governance-maintainers @xpscerpto/validation-maintainers @xpscerpto/security-maintainers
+
+
+# ---------------------------------------------------------------------------
+# Build system and validation infrastructure
+# ---------------------------------------------------------------------------
+
+/CMakeLists.txt                   @xpscerpto/build-maintainers @xpscerpto/ci-maintainers @xpscerpto/architecture-maintainers @xpscerpto/security-maintainers
+/cmake/                           @xpscerpto/build-maintainers @xpscerpto/ci-maintainers @xpscerpto/architecture-maintainers
+/cmake/**                         @xpscerpto/build-maintainers @xpscerpto/ci-maintainers @xpscerpto/architecture-maintainers
+/scripts/                         @xpscerpto/tools-maintainers @xpscerpto/ci-maintainers @xpscerpto/security-maintainers
+/scripts/**                       @xpscerpto/tools-maintainers @xpscerpto/ci-maintainers @xpscerpto/security-maintainers
+/tools/                           @xpscerpto/tools-maintainers @xpscerpto/validation-maintainers @xpscerpto/security-maintainers
+/tools/**                         @xpscerpto/tools-maintainers @xpscerpto/validation-maintainers @xpscerpto/security-maintainers
+
+
+# ---------------------------------------------------------------------------
+# Documentation
+# ---------------------------------------------------------------------------
+
+/docs/                            @xpscerpto/docs-maintainers @xpscerpto/governance-maintainers
+/docs/**                          @xpscerpto/docs-maintainers @xpscerpto/governance-maintainers
+
+# Security, governance, authority, architecture, or validation documentation
+# requires stronger review than ordinary explanatory documentation.
+/docs/security/                   @xpscerpto/security-maintainers @xpscerpto/docs-maintainers @xpscerpto/governance-maintainers
+/docs/security/**                 @xpscerpto/security-maintainers @xpscerpto/docs-maintainers @xpscerpto/governance-maintainers
+/docs/governance/                 @xpscerpto/governance-maintainers @xpscerpto/security-maintainers @xpscerpto/docs-maintainers
+/docs/governance/**               @xpscerpto/governance-maintainers @xpscerpto/security-maintainers @xpscerpto/docs-maintainers
+/docs/architecture/               @xpscerpto/architecture-maintainers @xpscerpto/docs-maintainers @xpscerpto/security-maintainers
+/docs/architecture/**             @xpscerpto/architecture-maintainers @xpscerpto/docs-maintainers @xpscerpto/security-maintainers
+/docs/validation/                 @xpscerpto/validation-maintainers @xpscerpto/ci-maintainers @xpscerpto/docs-maintainers
+/docs/validation/**               @xpscerpto/validation-maintainers @xpscerpto/ci-maintainers @xpscerpto/docs-maintainers
+
+
+# ---------------------------------------------------------------------------
+# Source root
+# ---------------------------------------------------------------------------
+
+/include/                         @xpscerpto/architecture-maintainers @xpscerpto/security-maintainers
+/include/**                       @xpscerpto/architecture-maintainers @xpscerpto/security-maintainers
+
+
+# ---------------------------------------------------------------------------
+# Base, memory, arithmetic, integrity, and low-level support
+# ---------------------------------------------------------------------------
+
+/include/xps/crypto/base/         @xpscerpto/base-maintainers @xpscerpto/security-maintainers @xpscerpto/architecture-maintainers
+/include/xps/crypto/base/**       @xpscerpto/base-maintainers @xpscerpto/security-maintainers @xpscerpto/architecture-maintainers
+
+/include/xps/crypto/memory/       @xpscerpto/memory-maintainers @xpscerpto/security-maintainers @xpscerpto/base-maintainers
+/include/xps/crypto/memory/**     @xpscerpto/memory-maintainers @xpscerpto/security-maintainers @xpscerpto/base-maintainers
+
+/include/xps/crypto/atomic/       @xpscerpto/concurrency-maintainers @xpscerpto/security-maintainers @xpscerpto/base-maintainers
+/include/xps/crypto/atomic/**     @xpscerpto/concurrency-maintainers @xpscerpto/security-maintainers @xpscerpto/base-maintainers
+
+/include/xps/crypto/number/       @xpscerpto/number-maintainers @xpscerpto/security-maintainers @xpscerpto/crypto-maintainers
+/include/xps/crypto/number/**     @xpscerpto/number-maintainers @xpscerpto/security-maintainers @xpscerpto/crypto-maintainers
+
+/include/xps/crypto/integrity/    @xpscerpto/integrity-maintainers @xpscerpto/security-maintainers @xpscerpto/crypto-maintainers
+/include/xps/crypto/integrity/**  @xpscerpto/integrity-maintainers @xpscerpto/security-maintainers @xpscerpto/crypto-maintainers
+
+
+# ---------------------------------------------------------------------------
+# Platform authority and admitted platform API
+# ---------------------------------------------------------------------------
+
+/include/xps/crypto/platform/     @xpscerpto/platform-maintainers @xpscerpto/security-maintainers @xpscerpto/architecture-maintainers @xpscerpto/sovereign-maintainers
+/include/xps/crypto/platform/**   @xpscerpto/platform-maintainers @xpscerpto/security-maintainers @xpscerpto/architecture-maintainers @xpscerpto/sovereign-maintainers
+
+/include/xps/crypto/platform.api/   @xpscerpto/platform-maintainers @xpscerpto/security-maintainers @xpscerpto/architecture-maintainers @xpscerpto/sovereign-maintainers
+/include/xps/crypto/platform.api/** @xpscerpto/platform-maintainers @xpscerpto/security-maintainers @xpscerpto/architecture-maintainers @xpscerpto/sovereign-maintainers
+
+
+# ---------------------------------------------------------------------------
+# Hardware authority
+# ---------------------------------------------------------------------------
+
+/include/xps/crypto/hw/           @xpscerpto/hw-maintainers @xpscerpto/platform-maintainers @xpscerpto/security-maintainers @xpscerpto/architecture-maintainers
+/include/xps/crypto/hw/**         @xpscerpto/hw-maintainers @xpscerpto/platform-maintainers @xpscerpto/security-maintainers @xpscerpto/architecture-maintainers
+
+
+# ---------------------------------------------------------------------------
+# SIMD authority-routed execution
+# ---------------------------------------------------------------------------
+
+/include/xps/crypto/simd/         @xpscerpto/simd-maintainers @xpscerpto/hw-maintainers @xpscerpto/security-maintainers @xpscerpto/validation-maintainers
+/include/xps/crypto/simd/**       @xpscerpto/simd-maintainers @xpscerpto/hw-maintainers @xpscerpto/security-maintainers @xpscerpto/validation-maintainers
+
+
+# ---------------------------------------------------------------------------
+# FHE and protected FHE public surfaces
+# ---------------------------------------------------------------------------
+
+/include/xps/crypto/FHE/          @xpscerpto/fhe-maintainers @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers @xpscerpto/validation-maintainers
+/include/xps/crypto/FHE/**        @xpscerpto/fhe-maintainers @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers @xpscerpto/validation-maintainers
+
+# Canonical or guard-sensitive FHE surfaces require strongest ownership.
+/include/xps/crypto/FHE/fhe.bootstrap.public_api.ixx  @xpscerpto/fhe-maintainers @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers @xpscerpto/architecture-maintainers @xpscerpto/sovereign-maintainers
+/include/xps/crypto/FHE/fhe.surface.guard.ixx        @xpscerpto/fhe-maintainers @xpscerpto/security-maintainers @xpscerpto/validation-maintainers @xpscerpto/architecture-maintainers @xpscerpto/sovereign-maintainers
+/include/xps/crypto/FHE/fhe.bfv.ixx                  @xpscerpto/fhe-maintainers @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers @xpscerpto/validation-maintainers
+/include/xps/crypto/FHE/fhe.ckks.ixx                 @xpscerpto/fhe-maintainers @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers @xpscerpto/validation-maintainers
+/include/xps/crypto/FHE/fhe.bootstrap*.ixx           @xpscerpto/fhe-maintainers @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers @xpscerpto/validation-maintainers @xpscerpto/architecture-maintainers
+
+
+# ---------------------------------------------------------------------------
+# Other cryptographic domains
+# ---------------------------------------------------------------------------
+
+/include/xps/crypto/hash/         @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers
+/include/xps/crypto/hash/**       @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers
+
+/include/xps/crypto/kdf/          @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers
+/include/xps/crypto/kdf/**        @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers
+
+/include/xps/crypto/mac/          @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers
+/include/xps/crypto/mac/**        @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers
+
+/include/xps/crypto/aead/         @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers
+/include/xps/crypto/aead/**       @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers
+
+/include/xps/crypto/aes/          @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers
+/include/xps/crypto/aes/**        @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers
+
+/include/xps/crypto/pqc/          @xpscerpto/pqc-maintainers @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers
+/include/xps/crypto/pqc/**        @xpscerpto/pqc-maintainers @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers
+
+/include/xps/crypto/ed25519/      @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers
+/include/xps/crypto/ed25519/**    @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers
+
+/include/xps/crypto/x25519/       @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers
+/include/xps/crypto/x25519/**     @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers
+
+/include/xps/crypto/rsa/          @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers
+/include/xps/crypto/rsa/**        @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers
+
+/include/xps/crypto/VeloSeal64/   @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers @xpscerpto/validation-maintainers
+/include/xps/crypto/VeloSeal64/** @xpscerpto/crypto-maintainers @xpscerpto/security-maintainers @xpscerpto/validation-maintainers
+
+
+# ---------------------------------------------------------------------------
+# Audit and evidence surfaces
+# ---------------------------------------------------------------------------
+
+/include/xps/crypto/audit/        @xpscerpto/audit-maintainers @xpscerpto/security-maintainers @xpscerpto/validation-maintainers
+/include/xps/crypto/audit/**      @xpscerpto/audit-maintainers @xpscerpto/security-maintainers @xpscerpto/validation-maintainers
+
+/evidence/                        @xpscerpto/audit-maintainers @xpscerpto/validation-maintainers @xpscerpto/security-maintainers
+/evidence/**                      @xpscerpto/audit-maintainers @xpscerpto/validation-maintainers @xpscerpto/security-maintainers
+/reports/                         @xpscerpto/audit-maintainers @xpscerpto/validation-maintainers
+/reports/**                       @xpscerpto/audit-maintainers @xpscerpto/validation-maintainers
+
+
+# ---------------------------------------------------------------------------
+# Tests and validation suites
+# ---------------------------------------------------------------------------
+
+/tests/                           @xpscerpto/validation-maintainers @xpscerpto/security-maintainers
+/tests/**                         @xpscerpto/validation-maintainers @xpscerpto/security-maintainers
+
+/tests/fhe/                       @xpscerpto/fhe-maintainers @xpscerpto/validation-maintainers @xpscerpto/security-maintainers
+/tests/fhe/**                     @xpscerpto/fhe-maintainers @xpscerpto/validation-maintainers @xpscerpto/security-maintainers
+
+/tests/simd/                      @xpscerpto/simd-maintainers @xpscerpto/hw-maintainers @xpscerpto/validation-maintainers @xpscerpto/security-maintainers
+/tests/simd/**                    @xpscerpto/simd-maintainers @xpscerpto/hw-maintainers @xpscerpto/validation-maintainers @xpscerpto/security-maintainers
+
+/tests/hw/                        @xpscerpto/hw-maintainers @xpscerpto/validation-maintainers @xpscerpto/security-maintainers
+/tests/hw/**                      @xpscerpto/hw-maintainers @xpscerpto/validation-maintainers @xpscerpto/security-maintainers
+
+/tests/platform/                  @xpscerpto/platform-maintainers @xpscerpto/validation-maintainers @xpscerpto/security-maintainers
+/tests/platform/**                @xpscerpto/platform-maintainers @xpscerpto/validation-maintainers @xpscerpto/security-maintainers
+
+/tests/crypto/                    @xpscerpto/crypto-maintainers @xpscerpto/validation-maintainers @xpscerpto/security-maintainers
+/tests/crypto/**                  @xpscerpto/crypto-maintainers @xpscerpto/validation-maintainers @xpscerpto/security-maintainers
+
+
+# ---------------------------------------------------------------------------
+# Release, artifacts, manifests, and final status records
+# ---------------------------------------------------------------------------
+
+/CHANGELOG.md                     @xpscerpto/release-maintainers @xpscerpto/governance-maintainers @xpscerpto/security-maintainers
+/RELEASE_NOTES.md                 @xpscerpto/release-maintainers @xpscerpto/governance-maintainers @xpscerpto/security-maintainers
+/VERSION                          @xpscerpto/release-maintainers @xpscerpto/build-maintainers
+/final_flags.txt                  @xpscerpto/validation-maintainers @xpscerpto/security-maintainers @xpscerpto/governance-maintainers
+/sha256_manifest.txt              @xpscerpto/audit-maintainers @xpscerpto/release-maintainers @xpscerpto/security-maintainers
+/patch.diff                       @xpscerpto/audit-maintainers @xpscerpto/validation-maintainers
+/evidence_bundle.tar.gz           @xpscerpto/audit-maintainers @xpscerpto/validation-maintainers @xpscerpto/security-maintainers
+/source_tree_result.tar.gz        @xpscerpto/release-maintainers @xpscerpto/audit-maintainers @xpscerpto/security-maintainers
+
+
+# ---------------------------------------------------------------------------
+# Final ownership note
+# ---------------------------------------------------------------------------
+#
+# CODEOWNERS routes review. It does not grant automatic acceptance.
+# A change may have the required owners and still be rejected if it violates:
+#
+# - GOVERNANCE.md
+# - AUTHORITY_MODEL.md
+# - MODULE_BOUNDARIES.md
+# - THREAT_MODEL.md
+# - SECURITY.md
+# - CI_VALIDATION_GATES.md
+# - REVIEW_POLICY.md
