@@ -289,7 +289,7 @@ SUPPORT.md
 
 `SUPPORT.md` defines general support channels.
 
-## 15. Recommended README wording
+## 15. README 
 
 XPScerpto is currently published for review, evaluation, and project visibility only. No permission is granted to use, copy, modify, redistribute, sublicense, or commercially deploy the code unless a formal license is later published or written permission is granted by the project owner.
 ```
