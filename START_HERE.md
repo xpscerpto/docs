@@ -18,7 +18,7 @@ Current global claim boundaries are conservative by default:
 - `FHE_BOOTSTRAP_COMPLETE = NO`
 - `FULL_SANITIZER_CTEST_CLAIMED = NO`
 
-These flags may only be changed by validated evidence from the relevant acceptance gates, final flags, CI results, sanitizer runtime logs, and reviewed merge records.
+These flags may only be changed by the relevant acceptance gates when those gates are backed by live evidence, reviewed CI results, sanitizer runtime logs where applicable, reviewed merge records, and explicit claim-decision records. `final_flags` may summarize accepted results, but they must not be treated as the source of truth.
 
 Any document, test, commit, release note, or report that claims otherwise must provide live evidence and must identify the exact gate that established the claim.
 
@@ -40,6 +40,7 @@ Read the documentation in this order:
 12. `CODEOWNERS`
 13. `SUPPORT.md`
 14. `LICENSE_STATUS.md`
+15. `docs/hw/README.md`
 
 For detailed formal sovereign security specifications, see:
 
@@ -51,6 +52,12 @@ For major architecture, authority, ownership, validation, or policy changes, see
 
 ```text
 docs/governance/README.md
+```
+
+For HW authority, intelligence, runtime artifacts, power/thermal authority, evidence custody, validation, integration, and traceability specifications, see:
+
+```text
+docs/hw/README.md
 ```
 
 This order matters. Governance defines how claims are controlled. The engineering principles define the project discipline. The authority model explains where execution authority comes from. The architecture explains how the system is structured once those rules are understood.
@@ -75,6 +82,24 @@ for accepted, rejected, superseded, or long-term decisions.
 
 These process documents do not replace `GOVERNANCE.md` or `REVIEW_POLICY.md`. They define how important changes are proposed and recorded.
 
+## HW subsystem documentation
+
+The HW subsystem documentation is maintained under:
+
+```text
+docs/hw/
+```
+
+Start with:
+
+```text
+docs/hw/README.md
+```
+
+The HW documentation defines the hardware authority, platform input boundary, deterministic HW intelligence, signal admission, sensor confidence, capability authorization, pressure reasoning, stability reasoning, runtime snapshot model, decision capsule contract, routing envelope contract, power and thermal authority, evidence custody, validation matrix, integration contracts, and traceability matrix.
+
+This directory is a subsystem specification layer. It does not replace root-level repository policy. Root-level governance, authority, architecture, module-boundary, security, and validation documents remain the repository-wide sources of authority.
+
 ## Core rule
 
 No shortcut is acceptable if it weakens authority, evidence, fail-closed behavior, sanitizer truth, module boundaries, ownership discipline, or production claim boundaries.
@@ -97,8 +122,10 @@ The expected authority flow is:
 platform governance
 → platform.api
 → hardware authority
-→ routing capsule
+→ decision capsule
+→ routing envelope
 → domain execution
+→ audit and evidence
 ```
 
 Domain code must not invent its own authority by probing the operating system, CPU, compiler environment, hidden runtime state, or local capability shortcuts.
@@ -123,6 +150,7 @@ CMakeLists.txt
 tests/
 tools/
 docs/
+docs/hw/
 ```
 
 Protected surfaces must not be changed through aliases, shims, adapters, weakened tests, deleted assertions, fake fallbacks, metadata-only proofs, or production overclaims.
@@ -151,5 +179,13 @@ GOVERNANCE.md
 ```
 
 It defines the project’s decision authority, review rules, protected surfaces, claim discipline, evidence requirements, and merge expectations.
+
+For the HW subsystem, review:
+
+```text
+docs/hw/README.md
+```
+
+after the root-level governance and authority documents are understood.
 
 XPScerpto should not be reviewed as a conventional utility library. It should be reviewed as a governed cryptographic infrastructure system where correctness, authority, evidence, and claim discipline must remain aligned.
