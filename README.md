@@ -132,6 +132,7 @@ Recommended reading order:
 13. `CODEOWNERS`
 14. `SUPPORT.md`
 15. `LICENSE_STATUS.md`
+16. `docs/hw/README.md`
 
 Governance process companions:
 
@@ -145,7 +146,15 @@ For detailed formal sovereign security specifications, see:
 docs/security/README.md
 ```
 
+For HW authority, intelligence, runtime, power/thermal, evidence, validation, integration, and traceability specifications, see:
+
+```text
+docs/hw/README.md
+```
+
 Root-level documents remain the repository-wide policy sources. The `docs/security/` directory provides detailed formal security specification companions and does not override root-level governance, authority, threat model, security, or validation policy.
+
+The `docs/hw/` directory provides subsystem-level HW specifications. It does not replace root-level governance, authority, architecture, module-boundary, security, or validation policy. It specializes those rules for the HW unit.
 
 Each document has a distinct role. They should not be collapsed into one generic README.
 
@@ -240,6 +249,32 @@ to record accepted, rejected, superseded, or long-term decisions that must remai
 
 These documents do not replace `GOVERNANCE.md`, `REVIEW_POLICY.md`, or `CI_VALIDATION_GATES.md`. They provide the process layer for proposals and durable decisions.
 
+## HW subsystem documentation
+
+The HW subsystem documentation is maintained under:
+
+```text
+docs/hw/
+```
+
+Start with:
+
+```text
+docs/hw/README.md
+```
+
+The HW documentation defines the hardware authority, platform input boundary, deterministic HW intelligence, signal admission, sensor confidence, capability authorization, pressure reasoning, stability reasoning, runtime snapshot model, decision capsule contract, routing envelope contract, power and thermal authority, evidence custody, validation matrix, integration contracts, and traceability matrix.
+
+The HW documentation is a subsystem specification layer. It does not replace root-level repository policy. Root-level governance, authority, architecture, module-boundary, security, and validation documents remain the repository-wide sources of authority.
+
+The permanent canonical path for the HW documentation set is:
+
+```text
+docs/hw/
+```
+
+If a future dedicated `hw` repository is created, that repository should link back to this canonical documentation or explicitly state which implementation-local files are code-adjacent companions.
+
 ## Repository architecture
 
 At a high level, XPScerpto is organized around layered responsibility:
@@ -280,7 +315,7 @@ Major repository families may include:
 - `audit` — evidence, ledgers, and attestation-related behavior;
 - `tests` — validation, regression, negative tests, authority tests, and sanitizer-backed testing;
 - `tools` — scans, replay utilities, evidence support, and CI helpers;
-- `docs` — normative and explanatory documentation.
+- `docs` — normative and explanatory documentation, including subsystem specification layers such as `docs/hw/`.
 
 This map describes architectural role, not production-readiness status.
 
@@ -313,6 +348,7 @@ CMakeLists.txt
 tests/
 tools/
 docs/
+docs/hw/
 .github/
 ```
 
