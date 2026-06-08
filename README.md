@@ -1,56 +1,165 @@
+<p align="center">
+  <img src="docs/assets/xpscerpto-banner.svg" alt="XPScerpto — Governed Sovereign Cryptographic Infrastructure" width="100%">
+</p>
+
+<div align="center">
+
 # XPScerpto
 
-XPScerpto is a governed sovereign cryptographic infrastructure platform.
+### Governed sovereign cryptographic infrastructure for sensitive systems
 
-It is designed around explicit authority, controlled module boundaries, fail-closed behavior, evidence-backed validation, and conservative claim discipline. XPScerpto is not organized as a loose collection of cryptographic utilities. It is structured as a governed platform where execution authority, validation evidence, and public claims must remain aligned.
+**Explicit authority · Controlled access · Provable custody · Replayable evidence · Evidence-gated claims**
 
-Official project information may be available at:
+[![Production Ready](https://img.shields.io/badge/PRODUCTION_READY-NO-991b1b?style=for-the-badge&labelColor=111827)](#current-claim-boundaries)
+[![Full Graph](https://img.shields.io/badge/FULL_GRAPH_ACCEPTED-NO-92400e?style=for-the-badge&labelColor=111827)](#current-claim-boundaries)
+[![Sanitizer Claim](https://img.shields.io/badge/FULL_SANITIZER_CTEST_CLAIMED-NO-92400e?style=for-the-badge&labelColor=111827)](#current-claim-boundaries)
+[![Claims](https://img.shields.io/badge/CLAIMS-EVIDENCE_GATED-0f172a?style=for-the-badge&labelColor=111827)](#claim-discipline)
+[![License](https://img.shields.io/badge/LICENSE-NOT_SELECTED-334155?style=for-the-badge&labelColor=111827)](#license)
 
-```text
-https://xpscerpto.eu
+[Project website](https://xpscerpto.eu) · [GitHub organization](https://github.com/xpscerpto) · [Security](SECURITY.md) · [Start here](START_HERE.md)
+
+</div>
+
+---
+
+## Definition
+
+**XPScerpto** is a governed sovereign cryptographic infrastructure platform for sensitive systems.
+
+It subjects **authority, access, custody, evidence, and operational behavior** to replayable proof. The platform connects **governance, access control, supply-chain control, verification, audit, and advanced cryptographic layers**, including classical cryptography, post-quantum cryptographic domains, and encrypted-computing domains, under one disciplined model.
+
+XPScerpto is not organized as a loose collection of cryptographic utilities. It is structured as a governed platform where **execution authority, validation evidence, module boundaries, failure behavior, and public claims** must remain aligned with proven truth.
+
+---
+
+## Current claim boundaries
+
+> These flags are not marketing language. They are claim boundaries.
+> They protect the repository from accidental overclaim, stale evidence, partial validation, and misleading release status.
+
+| Scope | Current boundary | Meaning |
+|---|---:|---|
+| Repository production readiness | `PRODUCTION_READY = NO` | No repository-wide production-ready claim is made. |
+| Full sanitizer / CTest claim | `FULL_SANITIZER_CTEST_CLAIMED = NO` | No full sanitizer-backed CTest cleanliness claim is made. |
+| Full graph acceptance | `FULL_GRAPH_ACCEPTED = NO` | Target-level or partial success is not full graph truth. |
+| FHE production readiness | `FHE_PRODUCTION_READY = NO` | FHE progress does not imply production readiness. |
+| FHE bootstrap completion | `FHE_BOOTSTRAP_COMPLETE = NO` | Bootstrap closure is not claimed without the relevant gate. |
+
+---
+
+## At a glance
+
+| Area | Role in XPScerpto | Claim discipline |
+|---|---|---|
+| 🏛️ Governance | Defines authority, review, ownership, and protected-surface policy. | Governance text does not replace live evidence. |
+| 🧭 Authority | Controls where execution authority comes from and how it flows. | Domain code must not invent local authority. |
+| 🔐 Cryptography | Contains classical, asymmetric, post-quantum, and encrypted-computing domains. | Cryptographic presence is not deployment readiness. |
+| 🧬 Verification | Tracks status, claims, evidence, replay, court, temporal rules, and source admission. | Claims must be accepted or rejected by the relevant gate. |
+| 🧾 Evidence | Maintains ledgers, runtime records, witnesses, final-court files, and audit artifacts. | Evidence must be replayable and scoped. |
+| 🧱 Boundaries | Protects modules, imports, ownership, surfaces, and runtime authority paths. | Boundary violations fail closed. |
+| 🧪 Tests and tools | Provide validation, negative tests, scans, replay, and FCC workflows. | Tool success is not automatically repository acceptance. |
+
+---
+
+## Sovereign model
+
+```mermaid
+graph TD
+    G[Governance and policy] --> A[Authority model]
+    A --> P[Platform admitted surface]
+    P --> H[Hardware authority]
+    H --> R[Routing capsule]
+    R --> D[Domain execution]
+    D --> E[Audit and evidence]
+    E --> V[Verification / court]
+    V --> C[Claim boundary]
+    C -->|accepted| T[Scoped truth]
+    C -->|rejected or incomplete| F[Fail-closed result]
 ```
 
-GitHub organization:
+XPScerpto separates capability from authority. A capability may exist on a machine, but that does not make it admitted execution authority.
 
-```text
-https://github.com/xpscerpto
-```
+---
 
-## Current status
+## Modern repository surfaces reflected in this README
 
-XPScerpto is under active sovereign validation and hardening.
+The current source tree contains repository surfaces for verification, claims, runtime custody, final-court decisions, witness binding, module graph analysis, command-surface policy, FCC workflows, application/UI assets, and cryptographic execution domains.
 
-This repository must not be described as production-ready unless the required validation gates prove that status through live evidence.
+This map describes **source-tree structure and architectural responsibility only**. It is not a production-readiness claim.
 
-Conservative global claim boundaries remain in force unless the relevant acceptance gates prove otherwise:
+<details open>
+<summary><strong>Core sovereign and verification surfaces</strong></summary>
 
-```text
-PRODUCTION_READY = NO
-FULL_SANITIZER_CTEST_CLAIMED = NO
-FULL_GRAPH_ACCEPTED = NO
-```
+| Surface | Role |
+|---|---|
+| `include/xps/crypto/verify/` | Sovereign verification modules, including authority, contracts, court, evidence, replay, runtime, status, temporal verification, claim graph, certification, and trust-engine rules. |
+| `verification/` | JSON policy and schema layer for statuses, claims, court rules, source admission, ledger, temporal rules, negative cases, and verification contracts. |
+| `claims/` | Claim registries, claim schemas, dependency graphs, and production-ready claim policy. |
+| `final_court/` | Final evidence-court verdicts, rejection schemas, final claim state schemas, and production-gate records. |
+| `witness/` | Independent witness policy, local witness tokens, witness rejections, and witness binding reports. |
+| `runtime/` | Runtime ledgers, session schemas, hash chains, produced/consumed artifacts, replay records, and runtime truth schemas. |
+| `module_graph/` | Module graph authority policy, graph edges, verdicts, and rejection records. |
+| `command_surface/` | FCC command catalog, help manifest, safe-next policy, thermal gate policy, workflow plan, and command-surface verdicts. |
+| `protocol/` | Event and snapshot schemas for command/control and evidence exchange. |
+| `include/xps/crypto/test_authority/` | Test-authority layer isolated from production verification ownership. |
 
-Subsystem-specific boundaries remain scoped to their own gates. Examples include:
+</details>
 
-```text
-FHE_PRODUCTION_READY = NO
-FHE_BOOTSTRAP_COMPLETE = NO
-```
+<details>
+<summary><strong>Cryptographic and execution domains</strong></summary>
 
-These flags are not marketing language. They are claim boundaries. They protect the repository from accidental overclaim, stale evidence, partial validation, and misleading release status.
+| Surface | Role |
+|---|---|
+| `include/xps/crypto/base/` | Foundational types, primitives, and low-level policy anchors. |
+| `include/xps/crypto/platform/` | Platform root, provider admission, runtime boundary, and OS-facing authority. |
+| `include/xps/crypto/platform.api/` | Admitted platform-facing surface. |
+| `include/xps/crypto/hw/` | Hardware evidence, topology, authority, and routing support. |
+| `include/xps/crypto/simd/` | Authority-routed acceleration and data movement. |
+| `include/xps/crypto/FHE/` | Homomorphic encryption, BFV, CKKS, bootstrap, key switching, NTT/RNS, and FHE guards. |
+| `include/xps/crypto/hash/`, `kdf/`, `mac/`, `aead/`, `aes/` | Symmetric cryptographic domains. |
+| `include/xps/crypto/pqc/`, `ed25519/`, `x25519/`, `rsa/` | Asymmetric and post-quantum cryptographic domains. |
+| `include/xps/crypto/number/`, `atomic/`, `memory/`, `integrity/` | Arithmetic, synchronization, memory, and integrity support layers. |
+| `include/xps/crypto/audit/` | Evidence, ledgers, and audit-related behavior. |
+
+</details>
+
+<details>
+<summary><strong>FCC, tooling, documentation, and UI surfaces</strong></summary>
+
+| Surface | Role |
+|---|---|
+| `docs/forensic_command_center/` | FCC architecture, control plane, protocol, runtime custody, security model, guided workflow, and integration documentation. |
+| `app/server/` | FCC server-side authority helpers and runtime server entrypoints. |
+| `app/ui/` | FCC web UI assets. |
+| `ui/` | Additional interface assets. |
+| `tools/` | Scans, replay utilities, evidence support, and CI helpers. |
+| `tests/` | Validation, regression, negative tests, authority tests, and sanitizer-backed testing. |
+| `architecture/` | Architecture summaries, domain execution model, evidence custody, platform authority chain, hardware routing, and threat-model companions. |
+| `docs/` | Normative and explanatory documentation, including governance, security, verification, command center, and subsystem documents. |
+| `.github/` | GitHub-specific project metadata and pull request template. |
+
+</details>
+
+---
 
 ## What XPScerpto is
 
-XPScerpto is a cryptographic infrastructure project with a governance-first architecture.
+XPScerpto is a governed sovereign cryptographic infrastructure platform with a governance-first and evidence-backed architecture.
 
 It focuses on:
 
 - explicit execution authority;
+- controlled access and custody discipline;
 - platform-controlled admission;
+- source identity and supply-chain control;
 - hardware evidence and routing discipline;
 - authority-routed SIMD execution;
 - cryptographic domain separation;
-- FHE, BFV, CKKS, and bootstrap validation discipline;
+- classical cryptographic domains;
+- post-quantum cryptographic domains;
+- encrypted-computing domains, including FHE, BFV, CKKS, and bootstrap validation discipline;
+- sovereign verification, claim graph, court, replay, ledger, and evidence layers;
+- runtime custody, witness binding, and final-court records;
 - strict module boundaries;
 - fail-closed behavior;
 - evidence-backed testing;
@@ -58,7 +167,9 @@ It focuses on:
 - review and ownership discipline;
 - documentation that does not outrun evidence.
 
-The project’s engineering model is based on the principle that correctness, authority, evidence, and claims must describe the same truth.
+The project’s engineering model is based on the principle that correctness, authority, custody, evidence, and claims must describe the same truth.
+
+---
 
 ## What XPScerpto is not
 
@@ -70,28 +181,16 @@ XPScerpto is not:
 - a project where build success implies acceptance;
 - a project where sanitizer configuration implies sanitizer cleanliness;
 - a project where target-only success implies full graph truth;
-- a project where one subsystem’s progress implies platform-wide readiness.
+- a project where one subsystem’s progress implies platform-wide readiness;
+- a project where documentation may outrun implementation evidence;
+- a project where cryptographic presence implies deployment readiness;
+- a project where a tool verdict automatically becomes repository-wide truth.
 
 Every acceptance claim must be proven by the relevant gate.
 
-## Core authority chain
+---
 
-The expected authority flow is:
-
-```text
-platform governance
-→ platform.api
-→ hardware authority
-→ routing capsule
-→ domain execution
-→ audit and evidence
-```
-
-Domain code must not invent execution authority by probing the operating system, CPU, compiler environment, hidden runtime state, or local capability shortcuts.
-
-A capability may exist on a machine, but that does not make it admitted execution authority.
-
-## Core validation discipline
+## Validation discipline
 
 XPScerpto keeps validation levels separate:
 
@@ -101,11 +200,35 @@ build success ≠ test success
 test success ≠ sanitizer truth
 target success ≠ full graph truth
 subsystem success ≠ repository-wide acceptance
+tool verdict ≠ acceptance gate unless explicitly bound
 ```
 
-This distinction is central to the repository.
-
 A precise partial result is acceptable. A broad claim without matching evidence is not.
+
+---
+
+## Claim discipline
+
+The following kinds of claims require evidence from the relevant gates:
+
+| Claim family | Requires live evidence |
+|---|---|
+| Production readiness | Yes |
+| Production-grade or deployment-ready status | Yes |
+| Full graph acceptance | Yes |
+| Sanitizer cleanliness | Yes |
+| Security hardened status | Yes |
+| Full validation | Yes |
+| Release acceptance | Yes |
+| Subsystem acceptance | Yes |
+| FHE / CKKS / BFV acceptance | Yes |
+| Bootstrap completion | Yes |
+| Full runtime closure | Yes |
+| Full materialization closure | Yes |
+
+Equivalent or stronger claims are also covered.
+
+---
 
 ## Documentation map
 
@@ -115,213 +238,66 @@ Start here:
 START_HERE.md
 ```
 
-Recommended reading order:
+<details open>
+<summary><strong>Recommended reading order</strong></summary>
 
-1. `START_HERE.md`
-2. `GOVERNANCE.md`
-3. `ENGINEERING_PRINCIPLES.md`
-4. `AUTHORITY_MODEL.md`
-5. `ARCHITECTURE.md`
-6. `MODULE_BOUNDARIES.md`
-7. `THREAT_MODEL.md`
-8. `SECURITY.md`
-9. `CI_VALIDATION_GATES.md`
-10. `REVIEW_POLICY.md`
-11. `CONTRIBUTING.md`
-12. `OWNERSHIP_MODEL.md`
-13. `CODEOWNERS`
-14. `SUPPORT.md`
-15. `LICENSE_STATUS.md`
-16. `docs/hw/README.md`
+| Order | Document |
+|---:|---|
+| 1 | `START_HERE.md` |
+| 2 | `GOVERNANCE.md` |
+| 3 | `ENGINEERING_PRINCIPLES.md` |
+| 4 | `AUTHORITY_MODEL.md` |
+| 5 | `ARCHITECTURE.md` |
+| 6 | `MODULE_BOUNDARIES.md` |
+| 7 | `THREAT_MODEL.md` |
+| 8 | `SECURITY.md` |
+| 9 | `CI_VALIDATION_GATES.md` |
+| 10 | `BUILD_AND_VALIDATION_PHILOSOPHY.md` |
+| 11 | `REVIEW_POLICY.md` |
+| 12 | `CONTRIBUTING.md` |
+| 13 | `CONTRIBUTION_AUTHORITY_CLASSES.md` |
+| 14 | `OWNERSHIP_MODEL.md` |
+| 15 | `CODEOWNERS` |
+| 16 | `SUPPORT.md` |
+| 17 | `LICENSE_STATUS.md` |
+| 18 | `docs/security/README.md` |
+| 19 | `docs/governance/README.md` |
+| 20 | `docs/verification/README.md` |
+| 21 | `docs/forensic_command_center/README.md` |
+| 22 | `docs/hw/README.md` |
 
-Governance process companions:
+</details>
 
-- `docs/governance/README.md`
-- `docs/governance/rfc-process.md`
-- `docs/governance/decision-record-template.md`
+<details>
+<summary><strong>Key documentation families</strong></summary>
 
-For detailed formal sovereign security specifications, see:
-
-```text
-docs/security/README.md
-```
-
-For HW authority, intelligence, runtime, power/thermal, evidence, validation, integration, and traceability specifications, see:
-
-```text
-docs/hw/README.md
-```
-
-Root-level documents remain the repository-wide policy sources. The `docs/security/` directory provides detailed formal security specification companions and does not override root-level governance, authority, threat model, security, or validation policy.
-
-The `docs/hw/` directory provides subsystem-level HW specifications. It does not replace root-level governance, authority, architecture, module-boundary, security, or validation policy. It specializes those rules for the HW unit.
-
-Each document has a distinct role. They should not be collapsed into one generic README.
-
-## Document roles
-
-| Document | Role |
+| Family | Entry point |
 |---|---|
-| `START_HERE.md` | Entry point and reading order |
-| `GOVERNANCE.md` | Decision authority, claim discipline, and protected-surface governance |
-| `ENGINEERING_PRINCIPLES.md` | Engineering discipline and implementation philosophy |
-| `AUTHORITY_MODEL.md` | Source and flow of execution authority |
-| `ARCHITECTURE.md` | Repository-wide system structure |
-| `MODULE_BOUNDARIES.md` | Import boundaries, public surfaces, and protected ownership |
-| `THREAT_MODEL.md` | Assets, trust boundaries, adversaries, and threat mapping |
-| `SECURITY.md` | Vulnerability reporting and security-sensitive change policy |
-| `CI_VALIDATION_GATES.md` | Validation gates and evidence requirements |
-| `REVIEW_POLICY.md` | How reviewers evaluate changes |
-| `CONTRIBUTING.md` | How contributors prepare changes |
-| `OWNERSHIP_MODEL.md` | Platform-neutral ownership policy |
-| `CODEOWNERS` | GitHub-specific review routing |
-| `SUPPORT.md` | General support process and public-support boundaries |
-| `LICENSE_STATUS.md` | Current licensing status and all-rights-reserved boundaries |
-| `docs/security/README.md` | Formal sovereign security specification layer index |
-| `docs/governance/README.md` | Governance process index for RFCs and decision records |
-| `docs/governance/rfc-process.md` | Process for proposing major architecture, authority, ownership, validation, and policy changes before implementation |
-| `docs/governance/decision-record-template.md` | Template for recording accepted, rejected, superseded, or long-term governance decisions |
+| Repository governance | `GOVERNANCE.md` |
+| Engineering discipline | `ENGINEERING_PRINCIPLES.md` |
+| Authority model | `AUTHORITY_MODEL.md` |
+| Module boundaries | `MODULE_BOUNDARIES.md` |
+| Validation gates | `CI_VALIDATION_GATES.md` |
+| Security reporting | `SECURITY.md` |
+| Verification documents | `docs/verification/README.md` |
+| Security specifications | `docs/security/README.md` |
+| Governance process | `docs/governance/README.md` |
+| Forensic Command Center | `docs/forensic_command_center/README.md` |
+| HW subsystem | `docs/hw/README.md` |
+| Architecture companions | `architecture/README.md` |
 
-## Formal security specifications
+</details>
 
-The root-level security and authority documents define repository-wide policy.
+Root-level documents remain the repository-wide policy sources. Subdirectory documentation specializes or explains those policies; it does not override them unless the root-level policy explicitly says so.
 
-The detailed formal sovereign security specification layer is maintained under:
-
-```text
-docs/security/
-```
-
-Start with:
-
-```text
-docs/security/README.md
-```
-
-That directory may contain canonical specification files such as:
-
-```text
-docs/security/01_threat_model.md
-docs/security/02_authority_model.md
-docs/security/03_capsule_specification.md
-docs/security/04_failure_semantics.md
-docs/security/05_audit_ledger_schema.md
-docs/security/06_runtime_enforcement_mapping.md
-docs/security/phase_summary.md
-docs/security/contribution-threats.md
-```
-
-These files are formal security specification companions. They do not replace root-level repository policy.
-
-If a `docs/security/` specification appears to conflict with a root-level policy document, the root-level policy remains the repository-wide authority and the security specification should be updated to align with it.
-
-## Governance process documents
-
-Repository-wide policy is defined by the root-level governance documents.
-
-Detailed process documents for major governance decisions are maintained under:
-
-```text
-docs/governance/
-```
-
-Start with:
-
-```text
-docs/governance/README.md
-```
-
-Use:
-
-```text
-docs/governance/rfc-process.md
-```
-
-when a proposed change affects long-term architecture, authority, public API ownership, validation gates, dependency policy, security process, or project direction.
-
-Use:
-
-```text
-docs/governance/decision-record-template.md
-```
-
-to record accepted, rejected, superseded, or long-term decisions that must remain reviewable over time.
-
-These documents do not replace `GOVERNANCE.md`, `REVIEW_POLICY.md`, or `CI_VALIDATION_GATES.md`. They provide the process layer for proposals and durable decisions.
-
-## HW subsystem documentation
-
-The HW subsystem documentation is maintained under:
-
-```text
-docs/hw/
-```
-
-Start with:
-
-```text
-docs/hw/README.md
-```
-
-The HW documentation defines the hardware authority, platform input boundary, deterministic HW intelligence, signal admission, sensor confidence, capability authorization, pressure reasoning, stability reasoning, runtime snapshot model, decision capsule contract, routing envelope contract, power and thermal authority, evidence custody, validation matrix, integration contracts, and traceability matrix.
-
-The HW documentation is a subsystem specification layer. It does not replace root-level repository policy. Root-level governance, authority, architecture, module-boundary, security, and validation documents remain the repository-wide sources of authority.
-
-The permanent canonical path for the HW documentation set is:
-
-```text
-docs/hw/
-```
-
-If a future dedicated `hw` repository is created, that repository should link back to this canonical documentation or explicitly state which implementation-local files are code-adjacent companions.
-
-## Repository architecture
-
-At a high level, XPScerpto is organized around layered responsibility:
-
-```text
-governance and policy documents
-  ↓
-build and CI policy
-  ↓
-base layer
-  ↓
-platform layer
-  ↓
-platform.api admitted surface
-  ↓
-hardware authority layer
-  ↓
-routing and dispatch layer
-  ↓
-audit and evidence layer
-  ↓
-domain execution layers
-  ↓
-tests, tools, and release evidence
-```
-
-Major repository families may include:
-
-- `base` — foundational types, checked primitives, and low-level policy anchors;
-- `platform` — platform root, provider admission, runtime policy, and operating boundary;
-- `platform.api` — admitted platform-facing surface;
-- `hw` — hardware evidence, topology, capability interpretation, and routing support;
-- `simd` — authority-routed acceleration and data movement;
-- `FHE` — homomorphic encryption, BFV, CKKS, bootstrap, key switching, NTT/RNS, and FHE surface guards;
-- `hash`, `kdf`, `mac`, `aead`, `aes` — symmetric cryptographic domains;
-- `pqc`, `ed25519`, `x25519`, `rsa` — asymmetric and post-quantum cryptographic domains;
-- `number`, `atomic`, `memory`, `integrity` — support layers for arithmetic, synchronization, memory, and integrity behavior;
-- `audit` — evidence, ledgers, and attestation-related behavior;
-- `tests` — validation, regression, negative tests, authority tests, and sanitizer-backed testing;
-- `tools` — scans, replay utilities, evidence support, and CI helpers;
-- `docs` — normative and explanatory documentation, including subsystem specification layers such as `docs/hw/`.
-
-This map describes architectural role, not production-readiness status.
+---
 
 ## Protected surfaces
 
-The following areas are protected by default:
+Changes to protected surfaces require clear scope, appropriate review, and evidence.
+
+<details>
+<summary><strong>Protected repository surfaces</strong></summary>
 
 ```text
 include/xps/crypto/base/
@@ -344,38 +320,55 @@ include/xps/crypto/atomic/
 include/xps/crypto/memory/
 include/xps/crypto/integrity/
 include/xps/crypto/audit/
-CMakeLists.txt
+include/xps/crypto/verify/
+include/xps/crypto/test_authority/
+verification/
+claims/
+runtime/
+final_court/
+witness/
+module_graph/
+command_surface/
+protocol/
+app/
+ui/
 tests/
 tools/
 docs/
-docs/hw/
+architecture/
+governance/
 .github/
+CMakeLists.txt
 ```
 
-Changes to protected surfaces require clear scope, appropriate review, and evidence.
+</details>
 
 Protected surfaces must not be changed through hidden shortcuts, weakened tests, deleted assertions, fake fallbacks, metadata-only proofs, or production overclaims.
 
-## Build and validation
+---
 
-Build and validation details may vary by platform, compiler, generator, and configured options.
+## Build and validation reporting
 
-Use the repository’s current build system and CI documentation as the source of truth for commands. When reporting build or test results, include the exact commands and scope.
+Build and validation details vary by platform, compiler, generator, and configured options.
 
-Validation claims should identify:
+When reporting build or test results, identify:
 
-- source tree or commit;
-- compiler and version;
-- CMake version;
-- generator;
-- build configuration;
-- commands executed;
-- tests run;
-- sanitizer configuration and runtime status, if claimed;
-- failures or skipped tests;
-- exact blocker, if incomplete.
+| Required field | Why it matters |
+|---|---|
+| Source tree or commit | Prevents stale or mismatched evidence. |
+| Compiler and version | C++23 module behavior is toolchain-sensitive. |
+| CMake version | Build graph generation is part of the evidence. |
+| Generator | Ninja/Makefiles and graph behavior may differ. |
+| Build configuration | Debug, Release, sanitizer, and module modes differ. |
+| Commands executed | Scope must be reproducible. |
+| Tests run | Targeted success is not full graph truth. |
+| Sanitizer runtime status | Configuration alone is not cleanliness. |
+| Failures or skipped tests | Missing evidence must stay visible. |
+| Exact blocker | Incomplete results must fail closed with precision. |
 
 Do not report a validation claim without enough evidence to support it.
+
+---
 
 ## Security
 
@@ -403,6 +396,8 @@ Security-sensitive topics include:
 
 If unsure whether an issue is security-sensitive, treat it as security-sensitive.
 
+---
+
 ## Support
 
 For non-security questions, use:
@@ -411,16 +406,11 @@ For non-security questions, use:
 SUPPORT.md
 ```
 
-Support topics may include:
-
-- build help;
-- installation help;
-- non-security bug reports;
-- documentation clarification;
-- test execution questions;
-- contribution workflow questions.
+Support topics include build help, installation help, non-security bug reports, documentation clarification, test execution questions, and contribution workflow questions.
 
 Do not include secrets, private keys, tokens, exploit details, private data, or active vulnerability reproduction steps in public support channels.
+
+---
 
 ## Contributing
 
@@ -436,20 +426,11 @@ CI_VALIDATION_GATES.md
 SECURITY.md
 ```
 
-A pull request should explain:
-
-- what changed;
-- why it changed;
-- which surfaces are affected;
-- whether protected surfaces are touched;
-- whether the change is security-sensitive;
-- what tests were run;
-- what evidence supports the claim;
-- what was not run;
-- what blockers remain;
-- what claims are not being made.
+A pull request should explain what changed, why it changed, which surfaces are affected, whether protected surfaces are touched, whether the change is security-sensitive, what tests were run, what evidence supports the claim, what was not run, what blockers remain, and what claims are not being made.
 
 Do not open a public pull request with vulnerability details unless disclosure has been coordinated under `SECURITY.md`.
+
+---
 
 ## Ownership and review routing
 
@@ -469,29 +450,7 @@ CODEOWNERS
 
 A change may have the required owners and still be rejected if it violates governance, authority, boundaries, validation, evidence, or claim discipline.
 
-## Claim boundaries
-
-The following kinds of claims require evidence from the relevant gates:
-
-- production-ready;
-- production-grade;
-- deployment-ready;
-- full graph passed;
-- sanitizer clean;
-- security hardened;
-- fully validated;
-- release accepted;
-- subsystem accepted;
-- FHE accepted;
-- CKKS accepted;
-- BFV accepted;
-- bootstrap complete;
-- full runtime closure;
-- full materialization closure.
-
-Equivalent or stronger claims are also covered.
-
-Do not make these claims unless the relevant acceptance gate proves them through live evidence.
+---
 
 ## License
 
@@ -501,23 +460,16 @@ See:
 LICENSE_STATUS.md
 ```
 
-License status: not yet selected.
+License status: **not yet selected**.
 
-XPScerpto is currently published for review, evaluation, and project visibility only. No permission is granted to use, copy, modify, redistribute, sublicense, or commercially deploy the code unless a formal license is later published or written permission is granted by the project owner.
+XPScerpto is currently published for review, evaluation, and project visibility only. No permission is granted to use, copy, modify, redistribute, sublicense, or commercially deploy the code unless a formal license or written permission is granted by the project owner.
 
-## Final note
+---
 
-XPScerpto should be evaluated as a governed cryptographic infrastructure system.
+<div align="center">
 
-Its credibility depends on alignment between:
+## Final principle
 
-```text
-implementation
-authority
-tests
-evidence
-documentation
-claims
-```
+**XPScerpto advances only when implementation, authority, access, custody, tests, evidence, documentation, and claims describe the same truth.**
 
-The project advances only when those dimensions describe the same truth.
+</div>
