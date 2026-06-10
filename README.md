@@ -1,14 +1,9 @@
 <p align="center">
-  <img src="docs/assets/xpscerpto-banner.svg" alt="XPScerpto — Governed Sovereign Cryptographic Infrastructure" width="100%">
+  <img src="docs/assets/xpscerpto.png" alt="XPScerpto — Governed Sovereign Cryptographic Infrastructure" width="100%">
 </p>
 
 <div align="center">
 
-# XPScerpto
-
-### Governed sovereign cryptographic infrastructure for sensitive systems
-
-**Explicit authority · Controlled access · Provable custody · Replayable evidence · Evidence-gated claims**
 
 [![Production Ready](https://img.shields.io/badge/PRODUCTION_READY-NO-991b1b?style=for-the-badge&labelColor=111827)](#current-claim-boundaries)
 [![Full Graph](https://img.shields.io/badge/FULL_GRAPH_ACCEPTED-NO-92400e?style=for-the-badge&labelColor=111827)](#current-claim-boundaries)
