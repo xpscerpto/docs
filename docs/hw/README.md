@@ -1,12 +1,45 @@
-# XPScerpto HW Documentation Root
+<p align="center">
+  <img src="/docs/assets/hw.svg" alt="XPScerpto — Governed Sovereign Cryptographic Infrastructure" width="100%">
+</p>
 
-**Document status:** Normative engineering documentation
-**Scope:** XPScerpto `hw` unit
-**Document type:** Documentation root and reading guide
+<div align="center">
 
-**Claim boundary:** This document does not claim `PRODUCTION_READY`, `SANITIZER_CLEAN`, `FULL_GRAPH_ACCEPTED`, market readiness, regulatory approval, or external certification.
+# XPScerpto HW Unit
 
-**Authority rule:** Platform observes. HW evaluates. Downstream units obey. FCC records and judges claims.
+## Governed Physical Intelligence and Execution Authorization Layer
+
+**Document status:** Normative engineering documentation  
+**Scope:** XPScerpto `hw` unit  
+**Document type:** Documentation root and reading guide  
+
+</div>
+
+---
+
+## Platform Definition
+
+XPScerpto is a governed sovereign cryptographic infrastructure platform for sensitive systems, built around evidence-bound claims, strict authority boundaries, and fail-closed operational truth.
+
+---
+
+## Claim Boundary
+
+This document does not claim `PRODUCTION_READY`, `SANITIZER_CLEAN`, `FULL_GRAPH_ACCEPTED`, market readiness, regulatory approval, or external certification.
+
+---
+
+## Authority Rule
+
+```text
+Platform observes.
+HW evaluates.
+Downstream units obey.
+FCC records and judges claims.
+```
+
+This rule is mandatory.
+
+Any implementation, test, documentation, or integration path that violates this rule is invalid.
 
 ---
 
@@ -18,9 +51,9 @@ The `hw` unit is not a hardware inventory helper, benchmark helper, feature dete
 
 The `hw` unit is the physical intelligence and execution authorization layer of XPScerpto. It evaluates platform-observed facts, assigns trust and confidence, authorizes capabilities, rejects unsafe assumptions, and emits decision capsules that downstream units must obey.
 
-HW does not observe the operating system directly.
-HW does not probe hardware directly.
-HW does not grant permission from raw signals.
+HW does not observe the operating system directly.  
+HW does not probe hardware directly.  
+HW does not grant permission from raw signals.  
 HW does not allow downstream units to self-authorize execution routes.
 
 ---
@@ -33,10 +66,6 @@ hw evaluates
 downstream obeys
 fcc records and judges claims
 ```
-
-This rule is mandatory.
-
-Any implementation, test, documentation, or integration path that violates this rule is invalid.
 
 ---
 
@@ -57,15 +86,15 @@ integration/     platform/SIMD/FHE/PQC/runtime/tests/FCC integration
 ## Reading Order
 
 ```text
-1. HW_FUNCTIONAL_SCOPE.md
-2. authority/HW_AUTHORITY_MODEL.md
-3. authority/HW_PLATFORM_INPUT_CONTRACT.md
-4. intelligence/HW_INTELLIGENCE_SCOPE.md
-5. intelligence/HW_SIGNAL_INTELLIGENCE_MODEL.md
-6. intelligence/HW_SENSOR_TRUST_AND_CONFIDENCE_MODEL.md
-7. intelligence/HW_CAPABILITY_AUTHORIZATION_MODEL.md
-8. intelligence/HW_PRESSURE_INTELLIGENCE_MODEL.md
-9. intelligence/HW_STABILITY_INTELLIGENCE_MODEL.md
+1.  HW_FUNCTIONAL_SCOPE.md
+2.  authority/HW_AUTHORITY_MODEL.md
+3.  authority/HW_PLATFORM_INPUT_CONTRACT.md
+4.  intelligence/HW_INTELLIGENCE_SCOPE.md
+5.  intelligence/HW_SIGNAL_INTELLIGENCE_MODEL.md
+6.  intelligence/HW_SENSOR_TRUST_AND_CONFIDENCE_MODEL.md
+7.  intelligence/HW_CAPABILITY_AUTHORIZATION_MODEL.md
+8.  intelligence/HW_PRESSURE_INTELLIGENCE_MODEL.md
+9.  intelligence/HW_STABILITY_INTELLIGENCE_MODEL.md
 10. runtime/HW_SNAPSHOT_MODEL.md
 11. runtime/HW_DECISION_CAPSULE_CONTRACT.md
 12. runtime/HW_ROUTING_ENVELOPE_CONTRACT.md
