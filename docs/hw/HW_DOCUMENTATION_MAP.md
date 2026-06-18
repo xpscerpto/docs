@@ -5,7 +5,6 @@
 **Claim boundary:** This document does not claim `PRODUCTION_READY`, `SANITIZER_CLEAN`, `FULL_GRAPH_ACCEPTED`, market readiness, or external certification.  
 **Authority rule:** Platform observes. HW evaluates. Downstream units obey. FCC records and judges claims.
 
-
 **Document type:** Documentation ownership and anti-duplication map
 
 ---
