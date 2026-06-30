@@ -1,4 +1,4 @@
-# xps.platform maintainer guide
+#platform maintainer guide
 
 The safest way to change `xps.platform` is to ask one question before touching code: does this change create, move, or interpret platform truth? If it creates or observes truth, it belongs below the platform authority boundary. If it interprets sealed hardware evidence, it likely belongs in `xps.hw`. If it is an algorithm choice in crypto, FHE, or SIMD, it should consume the appropriate authority object instead of probing the host.
 
