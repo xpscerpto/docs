@@ -1,4 +1,4 @@
-# xps.platform documentation
+# platform documentation
 
 Operating-system facts are easy to misuse when every module can read them directly. CPU leaves, runtime topology, filesystem state, clocks, entropy sources, telemetry, and provider identity all look like simple inputs, but they become security-sensitive once they influence cryptographic or hardware decisions. `xps.platform` exists to keep that authority in one place.
 
